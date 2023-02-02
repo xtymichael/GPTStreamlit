@@ -1,7 +1,7 @@
 import openai
 import streamlit as st
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 def generate_cover_letter(model_engine, personal_info, job_description, length, tone):
     completions = openai.Completion.create(
