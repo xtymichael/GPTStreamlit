@@ -7,7 +7,7 @@ import streamlit as st
     #load_dotenv()
 
 #openai.api_key = os.getenv("api_key")
-openai.api_key = st.secrets.api_key
+openai.api_key = st.secrets["api_key"]
 
 def generate_cover_letter(personal_info, job_title, job_description, length, tone):
     completions = openai.Completion.create(
