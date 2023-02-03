@@ -1,12 +1,13 @@
 import openai
 import streamlit as st
-from dotenv import load_dotenv
-import os
+#from dotenv import load_dotenv
+#import os
 
-def confiure():
-    load_dotenv()
+#def confiure():
+    #load_dotenv()
 
-openai.api_key = os.getenv("api_key")
+#openai.api_key = os.getenv("api_key")
+openai.api_key = st.secrets.api_key
 
 def generate_cover_letter(personal_info, job_title, job_description, length, tone):
     completions = openai.Completion.create(
@@ -21,7 +22,7 @@ def generate_cover_letter(personal_info, job_title, job_description, length, ton
     return message
 
 def main():
-    confiure()
+    #confiure()
     st.set_page_config(page_title="AI Cover Letter Generator", page_icon=":guardsman:", layout="wide")
     st.title("AI Cover Letter Generator")
     st.markdown("根据你的能力和公司职位要求，由AI帮你写一封求职信。")
